@@ -6,23 +6,22 @@
 */
 
 #include<stdio.h>
-#include<conio.h>
 
 int s[10], x[10], d;
 
 void sumOfSub(int, int, int);
 
 void main() {
-  int n, sum = 0;int i;
+  int n, sum = 0;
   printf("Enter the size of the set: ");
   scanf("%d", &n);
   printf("Enter the set in increasing order: \n");
-  for (i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++)
     scanf("%d", &s[i]);
   printf("Enter the value of d: ");
   scanf("%d", &d);
-  for (i = 1; i <= n; i++)
-    sum = sum + s[i];
+  for (int i = 1; i <= n; i++)
+    sum += s[i];
   if (sum < d || s[1] > d)
     printf("\nNo subset possible");
   else
@@ -45,7 +44,6 @@ void sumOfSub(int m, int k, int r) {
     sumOfSub(m, k + 1, r - s[k]);
   }
 }
-
 
 /*
 
